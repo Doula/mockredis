@@ -1,4 +1,4 @@
-mock-redis-py
+mockredis
 =============
 
 A mock object for redis.
