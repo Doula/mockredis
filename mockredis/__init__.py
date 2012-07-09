@@ -1,1 +1,5 @@
-from mockredis.mockredis import MockRedis
+from mockredis.redis import MockRedis
+
+__all__ = [
+    'MockRedis'
+    ]

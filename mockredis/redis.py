@@ -62,6 +62,12 @@ class MockRedis(object):
 
         MockRedis.redis[hashkey][attribute] = value
 
+    def lrange(self, key, start, stop):
+        """Emulate lrange."""
+
+        _list = MockRedis.redis[key]
+        return _list[start:stop + 1]
+
     def keys(self, pattern):  # pylint: disable=R0201
         """Emulate keys."""
         import re
@@ -99,6 +105,9 @@ class MockRedis(object):
         """Emulate smembers."""
 
         return MockRedis.redis[key]
+
+    def flushdb(self):
+        MockRedis.redis.clear()
 
 
 def mock_redis_client():
