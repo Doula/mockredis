@@ -3,8 +3,11 @@ import os
 from setuptools import setup
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README.md')).read()
-CHANGES = open(os.path.join(here, 'CHANGES.md')).read()
+try:
+    README = open(os.path.join(here, 'README.md')).read()
+    CHANGES = open(os.path.join(here, 'CHANGES.md')).read()
+except IOError:
+    CHANGES = README = ''
 
 requires = [
 ]
