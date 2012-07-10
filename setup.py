@@ -16,7 +16,7 @@ tests_require = requires + [
 ]
 
 setup(name='mockredis',
-      version='0.1dev',
+      version='0.1.3dev',
       description='A mock redis object.',
       long_description=README + '\n\n' + CHANGES,
       install_requires=requires,
