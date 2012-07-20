@@ -135,10 +135,8 @@ class MockRedis(object):
         if self.redis.has_key(key):
             result = self.redis[key].pop()
             if self.redis[key] == []:
-            	retval = self.redis.pop(key)
+            	delete(key)
             return result
-        else:
-			pass
 
     def sadd(self, key, value):  # pylint: disable=R0201
         """Emulate sadd."""
