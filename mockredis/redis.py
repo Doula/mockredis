@@ -135,7 +135,7 @@ class MockRedis(object):
         if self.redis.has_key(key):
             result = self.redis[key].pop()
             if self.redis[key] == []:
-            	delete(key)
+            	self.delete(key)
             return result
 
     def sadd(self, key, value):  # pylint: disable=R0201
